@@ -14,7 +14,7 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
     x: 9
-    y: 147
+    y: 146
     width: 1267
     height: 756
   m_ShowMode: 4
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1267
     height: 756
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1267
     height: 706
-  m_MinSize: {x: 683, y: 492}
+  m_MinSize: {x: 681, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 49
+  controlID: 27
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 990
     height: 706
-  m_MinSize: {x: 406, y: 492}
+  m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 50
+  controlID: 28
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,10 +154,10 @@ MonoBehaviour:
     y: 0
     width: 990
     height: 435
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 51
+  controlID: 29
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -364,14 +364,14 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 9
-    y: 196
+    y: 195
     width: 257
     height: 414
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 9cfbffff00000000
+    m_SelectedIDs: 122e0000
+    m_LastClickedID: 11794
+    m_ExpandedIDs: 8efbffff00000000482d0000582d0000c02d0000122e0000282e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 270
-    y: 196
+    y: 195
     width: 727
     height: 414
   m_SceneLighting: 1
@@ -426,9 +426,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -50.146603, y: -22.626951, z: 0.47851562}
+    m_Target: {x: -51.73224, y: -22.78668, z: 0.45703125}
     speed: 2
-    m_Value: {x: -50.146603, y: -22.626951, z: 0.47851562}
+    m_Value: {x: -51.73224, y: -22.78668, z: 0.45703125}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -455,9 +455,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 9.933489
+    m_Target: 11.948602
     speed: 2
-    m_Value: 9.933489
+    m_Value: 11.948602
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -561,8 +561,8 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 9
-    y: 631
+    x: 0
+    y: 454
     width: 988
     height: 250
   m_SearchFilter:
@@ -577,19 +577,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 77
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: 77
-  m_LastProjectPath: /Users/everybody2/Game Development/Unity/PaulSim/TwoDialogues
+  m_LastProjectPath: /Users/everybody2/Game Development/Unity/PaulSim/TwoDialogues/TwoDialoguesUnity/TwoDialogues
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 00270000
-    m_LastClickedID: 9984
-    m_ExpandedIDs: 000000000027000006270000f8270000bc290000e6290000f62a00004e2b0000302c00005c2c0000642c0000b82c0000c02c0000262d0000322d000000ca9a3bffffff7f
+    m_SelectedIDs: b0290000
+    m_LastClickedID: 10672
+    m_ExpandedIDs: 000000000227000008270000fa270000be290000e8290000f82a0000502b0000322c00005e2c0000662c0000ba2c0000c22c0000282d0000342d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -617,7 +617,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000027000006270000f8270000bc290000e6290000f62a00004e2b0000302c00005c2c0000642c0000b82c0000c02c0000262d0000322d0000
+    m_ExpandedIDs: 000000000227000008270000fa270000be290000e8290000f82a0000502b0000322c00005e2c0000662c0000ba2c0000c22c0000282d0000342d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -695,7 +695,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 9
-    y: 662
+    y: 631
     width: 988
     height: 250
 --- !u!114 &19
@@ -866,8 +866,8 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1001
-    y: 196
+    x: 992
+    y: 19
     width: 275
     height: 685
   m_ScrollPosition: {x: 0, y: 0}

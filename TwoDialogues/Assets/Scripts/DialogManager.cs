@@ -33,19 +33,21 @@ public class DialogManager : MonoBehaviour {
 		displayNextSentence ();
 	}
 
-	public void displayNextSentence() {
+	public string displayNextSentence() {
 
 		// close the dialog if no sentences are left to show
 		if (sentences.Count == 0) {
 
 			endDialog ();
-			return;
+			return "noMoreSentences";
 		}
 
 		string sentence = sentences.Dequeue ();
 
 		StopAllCoroutines ();
 		StartCoroutine ("typeSentence", sentence);
+
+		return "hasMoreSentences";
 	}
 
 	IEnumerator typeSentence (string sentence) {
@@ -77,5 +79,6 @@ public class DialogManager : MonoBehaviour {
 
 	public void endDialog() {
 		tempDialog.speechBox.text = "";
+		FindObjectOfType<CharacterRed> ().enableMovement ();
 	}
 }

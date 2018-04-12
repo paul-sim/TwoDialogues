@@ -122,7 +122,6 @@ GameObject:
   - component: {fileID: 58446808}
   - component: {fileID: 58446810}
   - component: {fileID: 58446809}
-  - component: {fileID: 58446812}
   - component: {fileID: 58446811}
   m_Layer: 5
   m_Name: speechContainer
@@ -210,17 +209,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &58446812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 58446807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18676726af7e9419b9f1701bad1b1d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &98713156
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +636,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40.2, y: 2.095}
+  m_AnchoredPosition: {x: -585.6095, y: 31.396488}
   m_SizeDelta: {x: 41.49, y: 25.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517654299
@@ -2227,8 +2215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6284eb6fa1d648b195e8efb4ac41863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRB: {fileID: 1882942621}
-  facingRight: 1
 --- !u!1 &1929043232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2423,7 +2409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6824a3934fe6e4840b1542644f176946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogAnimator: {fileID: 0}
 --- !u!4 &1972941364
 Transform:
   m_ObjectHideFlags: 0
@@ -2521,6 +2506,7 @@ GameObject:
   - component: {fileID: 2075515494}
   - component: {fileID: 2075515492}
   - component: {fileID: 2075515495}
+  - component: {fileID: 2075515493}
   m_Layer: 0
   m_Name: CharacterBlack
   m_TagString: Untagged
@@ -2558,12 +2544,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog:
-    speaker: black character
+    speaker: Black Character
     speech:
-    - Why do you keep staring at me like the world is going to end? I wish you can
-      just walk the other way.
-    - hmmph!
+    - It's a nice day out. I want to have a picnic and play with my cat!
+    - "Want to join?\x03"
     speechBox: {fileID: 517654299}
+--- !u!114 &2075515493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2075515490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ce7f06e50a042d0990a4a9b8c425bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  makePlayerStay: 1
+  dialogState: 2
 --- !u!61 &2075515494
 BoxCollider2D:
   m_ObjectHideFlags: 0

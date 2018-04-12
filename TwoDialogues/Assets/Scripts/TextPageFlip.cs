@@ -4,34 +4,40 @@ using UnityEngine;
 
 public class TextPageFlip : MonoBehaviour {
 
-	BoxCollider2D bc;
-	bool mouseInPanel;
-	DialogManager dm;
+	private DialogManager dm;
+	public bool makePlayerStay;
+	public DialogState dialogState; 
+
+	public enum DialogState {
+		startingDialog,
+		midDialog,
+		notInDialog
+	};
 
 	void Start () {
-		bc = gameObject.GetComponent<BoxCollider2D> ();
-		mouseInPanel = false;
 		dm = FindObjectOfType<DialogManager> ();
+		dialogState = DialogState.notInDialog;
 	}
-
-	void Update() {
-		// if user clicks inside dialog bubble, "flip the page"
-		if (Input.GetMouseButtonDown (0) && mouseInPanel) {
-			dm.displayNextSentence ();
+		
+	public void flipPage() {
+		// dormant dialog is now active.. starting dialog
+		if (dialogState == DialogState.notInDialog) {
+			dialogState = DialogState.startingDialog;
 		}
-	}
 
-	void OnMouseEnter () {
-		mouseInPanel = true;
-
-	}
-
-	void OnMouseExit () {
-		mouseInPanel = false;
-	}
-
-	void FixedUpdate () { 
-		// resize clickable "flipping the page" dialog box collider 
-		bc.size = new Vector2(((RectTransform)gameObject.transform).rect.width, ((RectTransform)gameObject.transform).rect.height);
+		if (dialogState == DialogState.startingDialog) {
+			FindObjectOfType<DialogTrigger> ().triggerDialog ();
+			if (makePlayerStay) {
+				FindObjectOfType<CharacterRed> ().disableMovement ();
+			}
+			// dialog has begun, is in mid dialog
+			dialogState = DialogState.midDialog;
+		}
+		else if (dialogState == DialogState.midDialog) {
+			if (dm.displayNextSentence () == "noMoreSentences") {
+				// dialog is done
+				dialogState = DialogState.notInDialog;
+			}
+		}
 	}
 }
