@@ -20,7 +20,11 @@ public class BoxColliderEnterTrigger : MonoBehaviour {
 	}
 		
 	void OnTriggerExit2D(Collider2D other) {
-		inTalkTriggerDistance = false;
+		if (other.CompareTag ("Player")) {
+			inTalkTriggerDistance = false;
+			FindObjectOfType<DialogManager> ().endDialog ();
+			tpf.dialogState = TextPageFlip.DialogState.notInDialog;
+		}
 	}
 		
 	void Update() {

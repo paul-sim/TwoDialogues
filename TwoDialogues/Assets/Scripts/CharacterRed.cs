@@ -32,6 +32,8 @@ public class CharacterRed : MonoBehaviour {
 				flip ();
 			else if ((moveHorizontal < 0) && facingRight)
 				flip ();
+		} else {
+			myRB.velocity = new Vector2 (0, 0);
 		}
 	}
 

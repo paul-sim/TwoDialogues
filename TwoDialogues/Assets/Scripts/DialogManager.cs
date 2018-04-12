@@ -69,15 +69,11 @@ public class DialogManager : MonoBehaviour {
 			yield return null;
 		}
 
-		/*
-		foreach (char letter in sentence.ToCharArray()) {
-			tempDialog.speechBox.text += letter;
-
-			yield return null;
-		} */
 	}
 
 	public void endDialog() {
+		StopAllCoroutines ();
+		sentences.Clear ();
 		tempDialog.speechBox.text = "";
 		FindObjectOfType<CharacterRed> ().enableMovement ();
 	}
