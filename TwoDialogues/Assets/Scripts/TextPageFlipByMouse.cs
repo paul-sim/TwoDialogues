@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* for bit of context, this script was given to the UI Panel Object. The UI Panel Object also
+ * had the box collider object
+ * */
 public class TextPageFlipByMouse : MonoBehaviour {
 
 	BoxCollider2D bc;

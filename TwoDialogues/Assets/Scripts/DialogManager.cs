@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class DialogManager : MonoBehaviour {
 
 	private Dialog tempDialog;
+	public GameObject dialogContinueTriangle;
+	Vector2 dialogTriangleDefaultPosition = new Vector2(-62, -16);
 
 	private Queue<string> sentences;
 
@@ -13,8 +15,9 @@ public class DialogManager : MonoBehaviour {
 	void Start () {
 		sentences = new Queue<string>();
 		tempDialog = null;
+		dialogContinueTriangle = GameObject.Find("dialogContinueTriangle"); // only one instance in entire game
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		
@@ -24,6 +27,7 @@ public class DialogManager : MonoBehaviour {
 
 		tempDialog = dialog;
 		// tempDialog.speakerBox.text = tempDialog.speaker;
+		tempDialog.speechBox.enabled = true;
 		sentences.Clear();
 
 		foreach (string sentence in dialog.speech) {
@@ -43,6 +47,7 @@ public class DialogManager : MonoBehaviour {
 		}
 
 		string sentence = sentences.Dequeue ();
+		dialogContinueTriangle.transform.position = dialogTriangleDefaultPosition;
 
 		StopAllCoroutines ();
 		StartCoroutine ("typeSentence", sentence);
@@ -69,12 +74,40 @@ public class DialogManager : MonoBehaviour {
 			yield return null;
 		}
 
+		// we have displayed entire sentence so insert the continue dialog triangle
+		// insert the triangle near bottom right corner of dialog box
+		// var tempRect = ((RectTransform)(tempDialog.speechBox.transform.parent.transform)).rect;
+		//var tempRect = ((RectTransform)(tempDialog.speechBox.transform)).rect;
+
+		//float tempWidth = tempRect.width;
+		//float tempHeight = tempRect.height;
+		/*
+		Debug.Log ("width is " + tempWidth);
+		Debug.Log ("height is " + tempHeight);
+		Debug.Log ("position x is " + tempRect.x);
+		Debug.Log ("position y is " + tempRect.y);
+		*/
+
+		// Debug.Log ("position y is " + tempRect.position.y);
+
+		// dialogContinueTriangle.transform.position = new Vector2(tempRect.x + tempWidth, tempRect.y + tempHeight);
+		// dialogContinueTriangle.transform.position = new Vector2(tempRect.position.x + tempRect.width, tempRect.position.y + tempRect.height);
+		// dialogContinueTriangle.transform.position = tempRect.position;
+		dialogContinueTriangle.transform.position = (GameObject.Find("CharacterBlack")).transform.position;
+		(GameObject.Find("Canvas")).transform.position = (GameObject.Find("CharacterBlack")).transform.position;
+
 	}
 
 	public void endDialog() {
 		StopAllCoroutines ();
 		sentences.Clear ();
-		tempDialog.speechBox.text = "";
+		dialogContinueTriangle.transform.position = dialogTriangleDefaultPosition;
+		// tempDialog will not be null if this method was called for when walking away mid conversation
+		if (tempDialog != null) {
+			tempDialog.speechBox.text = "";
+			tempDialog.speechBox.enabled = false; // if enabled, it leaves a thin streak of button sprite
+			tempDialog = null;
+		}
 		FindObjectOfType<CharacterRed> ().enableMovement ();
 	}
 }

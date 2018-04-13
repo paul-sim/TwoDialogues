@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Dialog.cs" />
      <Compile Include="Assets\Scripts\DialogManager.cs" />
      <Compile Include="Assets\Scripts\DialogTrigger.cs" />
+     <Compile Include="Assets\Scripts\InsertTriangleDialogContinue.cs" />
      <Compile Include="Assets\Scripts\TextPageFlip.cs" />
      <Compile Include="Assets\Scripts\TextPageFlipByMouse.cs" />
      <None Include="Assets\Graphics\BayatGames\Free Platform Game Assets\Readme.txt" />
