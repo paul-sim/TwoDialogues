@@ -2670,6 +2670,7 @@ MonoBehaviour:
     - What a glorious day! I can eat a horse and play games all day!
     - let's see..
     speechBox: {fileID: 517654299}
+    speechCanvas: {fileID: 1958259656}
 --- !u!114 &2075515493
 MonoBehaviour:
   m_ObjectHideFlags: 0

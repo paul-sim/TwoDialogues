@@ -11,5 +11,6 @@ public class Dialog {
 	public string[] speech;
 	// public Text speakerBox;
 	public Text speechBox;
+	public Canvas speechCanvas;
 
 }

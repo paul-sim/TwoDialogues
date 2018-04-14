@@ -39,6 +39,9 @@ public class DialogManager : MonoBehaviour {
 
 	public string displayNextSentence() {
 
+		// place dialog canvas on speaking character
+		placeDialogBubbleOnCharacter();
+
 		// close the dialog if no sentences are left to show
 		if (sentences.Count == 0) {
 
@@ -74,28 +77,11 @@ public class DialogManager : MonoBehaviour {
 			yield return null;
 		}
 
-		// we have displayed entire sentence so insert the continue dialog triangle
-		// insert the triangle near bottom right corner of dialog box
-		// var tempRect = ((RectTransform)(tempDialog.speechBox.transform.parent.transform)).rect;
-		//var tempRect = ((RectTransform)(tempDialog.speechBox.transform)).rect;
-
-		//float tempWidth = tempRect.width;
-		//float tempHeight = tempRect.height;
-		/*
-		Debug.Log ("width is " + tempWidth);
-		Debug.Log ("height is " + tempHeight);
-		Debug.Log ("position x is " + tempRect.x);
-		Debug.Log ("position y is " + tempRect.y);
-		*/
-
-		// Debug.Log ("position y is " + tempRect.position.y);
-
-		// dialogContinueTriangle.transform.position = new Vector2(tempRect.x + tempWidth, tempRect.y + tempHeight);
-		// dialogContinueTriangle.transform.position = new Vector2(tempRect.position.x + tempRect.width, tempRect.position.y + tempRect.height);
-		// dialogContinueTriangle.transform.position = tempRect.position;
+		// we have displayed entire sentence so insert the continue dialog triangle next to dialog bubble
 		dialogContinueTriangle.transform.position = (GameObject.Find("CharacterBlack")).transform.position;
-		(GameObject.Find("Canvas")).transform.position = (GameObject.Find("CharacterBlack")).transform.position;
-
+		var tmp = dialogContinueTriangle.transform.position;
+		tmp.y -= 1.2f; // offset triangle y position downwards. better positioning
+		dialogContinueTriangle.transform.position = tmp;
 	}
 
 	public void endDialog() {
@@ -109,5 +95,9 @@ public class DialogManager : MonoBehaviour {
 			tempDialog = null;
 		}
 		FindObjectOfType<CharacterRed> ().enableMovement ();
+	}
+
+	public void placeDialogBubbleOnCharacter() {
+		tempDialog.speechCanvas.transform.position = (GameObject.Find("CharacterBlack")).transform.position;
 	}
 }
